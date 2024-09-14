@@ -2,56 +2,7 @@
   <div id="app">
     <div id="nav" :class="active ? 'active' : ''" @click="close">
       <router-link to="/home">介绍</router-link>
-      <!-- react16相关路由 -->
-      <router-link to="/react16">
-        react16
-        <a-icon :class="['main-icon', { active: react16Flag }]" type="caret-up" @click.native="handleFlag('react16')" />
-      </router-link>
-      <div class="sub-menu" v-show="react16Flag">
-        <router-link to="/react16-sub/home">home</router-link>
-        <router-link to="/react16-sub/dialog">dialog</router-link>
-        <router-link to="/react16-sub/location">location</router-link>
-        <router-link to="/react16-sub/communication">communication</router-link>
-        <router-link to="/react16-sub/nest">nest</router-link>
-        <router-link to="/react16-sub/font">font</router-link>
-      </div>
-      <!-- react17相关路由 -->
-      <router-link to="/react17">
-        react17
-        <span class="alive">保活</span>
-        <a-icon :class="['main-icon', { active: react17Flag }]" type="caret-up" @click.native="handleFlag('react17')" />
-      </router-link>
-      <div class="sub-menu" v-show="react17Flag">
-        <router-link to="/react17-sub/home">home</router-link>
-        <router-link to="/react17-sub/dialog">dialog</router-link>
-        <router-link to="/react17-sub/location">location</router-link>
-        <router-link to="/react17-sub/communication">communication</router-link>
-        <router-link to="/react17-sub/state">state</router-link>
-      </div>
-      <!-- vue2相关路由 -->
-      <router-link to="/vue2">
-        vue2
-        <a-icon :class="['main-icon', { active: vue2Flag }]" type="caret-up" @click.native="handleFlag('vue2')" />
-      </router-link>
-      <div class="sub-menu" v-show="vue2Flag">
-        <router-link to="/vue2-sub/home">home</router-link>
-        <router-link to="/vue2-sub/dialog">dialog</router-link>
-        <router-link to="/vue2-sub/location">location</router-link>
-        <router-link to="/vue2-sub/communication">communication</router-link>
-      </div>
-      <!-- vue3相关路由 -->
-      <router-link v-if="degrade" to="/vue3">
-        vue3
-        <span class="alive">保活</span>
-        <a-icon :class="['main-icon', { active: vue3Flag }]" type="caret-up" @click.native="handleFlag('vue3')" />
-      </router-link>
-      <div class="sub-menu" v-show="vue3Flag">
-        <router-link to="/vue3-sub/home">home</router-link>
-        <router-link to="/vue3-sub/dialog">dialog</router-link>
-        <router-link to="/vue3-sub/location">location</router-link>
-        <router-link to="/vue3-sub/contact">contact</router-link>
-        <router-link to="/vue3-sub/state">state</router-link>
-      </div>
+
       <router-link v-if="degrade" to="/vite"
         >vite <a-icon :class="['main-icon', { active: viteFlag }]" type="caret-up" @click.native="handleFlag('vite')"
       /></router-link>
@@ -61,7 +12,13 @@
         <router-link to="/vite-sub/location">location</router-link>
         <router-link to="/vite-sub/contact">contact</router-link>
       </div>
-      <router-link to="/angular12">angular12</router-link>
+      <router-link v-if="degrade" to="/ai-thor"
+      >ai-thor <a-icon :class="['main-icon', { active: viteFlag }]" type="caret-up" @click.native="handleFlag('ai-thor')"
+      /></router-link>
+      <div class="sub-menu" v-show="viteFlag">
+        <router-link to="/ai-thor/workflow">workflow</router-link>
+        <router-link to="/ai-thor/agentAssistant">agentAssistant</router-link>
+      </div>
       <router-link to="/all">all</router-link>
       <router-link to="/postmessage">postmessage</router-link>
       <a-button class="menu-icon" type="primary" icon="unordered-list" size="large" @click.stop="active = !active" />
