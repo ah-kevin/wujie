@@ -11,8 +11,8 @@ export default {
     viteUrl() {
       // console.log(hostMap("//localhost:5173/") + this.$route.params.path);
       console.log(this.$route);
-      // return hostMap("//llm-center-admin.ceshiservice.cn/") + this.$route.params.path;
-      return hostMap("//localhost:5173/") + this.$route.params.path;
+      return hostMap("//llm-center-admin.ceshiservice.cn/") + this.$route.params.path;
+      // return hostMap("//localhost:5173/") + this.$route.params.path;
     },
   },
 };

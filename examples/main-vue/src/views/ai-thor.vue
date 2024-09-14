@@ -9,7 +9,8 @@ import hostMap from "../hostMap";
 export default {
   data() {
     return {
-      viteUrl: hostMap("//localhost:5173/"),
+      viteUrl: hostMap("//llm-center-admin.ceshiservice.cn/"),
+      // viteUrl: hostMap("//localhost:5173/"),
     };
   },
 };

@@ -79,8 +79,8 @@ setupApp({
 
 setupApp({
   name: "ai-thor",
-  // url: hostMap("//llm-center-admin.ceshiservice.cn/"),
-  url: hostMap("//localhost:5173/"),
+  url: hostMap("//llm-center-admin.ceshiservice.cn/"),
+  // url: hostMap("//localhost:5173/"),
   attrs,
   exec: true,
   props,
