@@ -32,6 +32,7 @@ bus.$on("sub-route-change", (name, path) => {
   const mainPath = `/${name}-sub${path}`;
   const currentName = router.currentRoute.name;
   const currentPath = router.currentRoute.path;
+  // console.table({ mainName, mainPath, currentName, currentPath });
   if (mainName === currentName && mainPath !== currentPath) {
     router.push({ path: mainPath });
   }
@@ -59,6 +60,17 @@ setupApp({
   url: hostMap("//localhost:7500/"),
   attrs,
   exec: true,
+  plugins: [
+    {
+      patchElementHook(element, iframeWindow) {
+        if (element.nodeName === "STYLE") {
+          element.insertAdjacentElement = function (_position, ele) {
+            iframeWindow.document.head.appendChild(ele);
+          };
+        }
+      },
+    },
+  ],
   props,
   fetch: credentialsFetch,
   degrade,
@@ -67,10 +79,22 @@ setupApp({
 
 setupApp({
   name: "ai-thor",
-  url: hostMap("//llm-center-admin.ceshiservice.cn/"),
+  // url: hostMap("//llm-center-admin.ceshiservice.cn/"),
+  url: hostMap("//localhost:5173/"),
   attrs,
   exec: true,
   props,
+  plugins: [
+    {
+      patchElementHook(element, iframeWindow) {
+        if (element.nodeName === "STYLE") {
+          element.insertAdjacentElement = function (_position, ele) {
+            iframeWindow.document.head.appendChild(ele);
+          };
+        }
+      },
+    },
+  ],
   fetch: credentialsFetch,
   degrade,
   ...lifecycles,

@@ -7,14 +7,27 @@
   </div>
   <router-view />
 </template>
+<script setup lang="ts">
+import {useRoute} from "vue-router";
+import {watch} from "vue";
 
+const route = useRoute();
+
+// 如果需要监听整个路由对象的变化，可以直接传递 route
+watch(route, (newRoute, oldRoute) => {
+  console.log(newRoute);
+});
+</script>
+<!--
 <script>
 export default {
   watch: {
     // 在 vite-sub 路由下主动告知主应用路由跳转，主应用也跳到相应路由高亮菜单栏
     $route() {
+      console.log(this.$route)
       window.$wujie?.bus.$emit("sub-route-change", "vite", this.$route.path);
     },
   },
 };
 </script>
+-->

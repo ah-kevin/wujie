@@ -15,6 +15,7 @@ import Angular12 from "../views/Angular12.vue";
 import Multiple from "../views/Multiple.vue";
 import PostMessage from "../views/PostMessage.vue";
 import AiThor from "@/views/ai-thor.vue";
+import AiThorSub from "@/views/ai-thor-sub.vue";
 
 const basename = process.env.NODE_ENV === "production" ? "/demo-main-vue/" : "";
 
@@ -67,9 +68,14 @@ const routes = [
     component: ViteSub,
   },
   {
-    path: "/ai-thor/:path",
+    path: "/ai-thor",
     name: "ai-thor",
     component: AiThor,
+  },
+  {
+    path: "/ai-thor-sub/:path",
+    name: "ai-thor-sub",
+    component: AiThorSub,
   },
   {
     path: "/vue3",

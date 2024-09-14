@@ -12,12 +12,11 @@
         <router-link to="/vite-sub/location">location</router-link>
         <router-link to="/vite-sub/contact">contact</router-link>
       </div>
-      <router-link v-if="degrade" to="/ai-thor"
-      >ai-thor <a-icon :class="['main-icon', { active: viteFlag }]" type="caret-up" @click.native="handleFlag('ai-thor')"
+      <router-link v-if="degrade" to="/ai-thor">ai-thor <a-icon :class="['main-icon', { active: aiThorFlag }]" type="caret-up" @click.native="handleFlag('aiThor')"
       /></router-link>
-      <div class="sub-menu" v-show="viteFlag">
-        <router-link to="/ai-thor/workflow">workflow</router-link>
-        <router-link to="/ai-thor/agentAssistant">agentAssistant</router-link>
+      <div class="sub-menu" v-show="aiThorFlag">
+        <router-link to="/ai-thor-sub/workflow">workflow</router-link>
+        <router-link to="/ai-thor-sub/agentAssistant">agentAssistant</router-link>
       </div>
       <router-link to="/all">all</router-link>
       <router-link to="/postmessage">postmessage</router-link>
@@ -40,6 +39,7 @@ export default {
       vue2Flag: this.$route.name === "vue2-sub",
       vue3Flag: this.$route.name === "vue3-sub",
       viteFlag: this.$route.name === "vite-sub",
+      aiThorFlag: this.$route.name === "ai-thor-sub",
       degrade: window.Proxy,
     };
   },

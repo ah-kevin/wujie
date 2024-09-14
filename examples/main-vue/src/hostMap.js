@@ -8,6 +8,7 @@ const map = {
   "//localhost:7700/": "//wujie-micro.github.io/demo-main-react/",
   "//localhost:8000/": "//wujie-micro.github.io/demo-main-vue/",
   "//llm-center-admin.ceshiservice.cn/": "//llm-center-admin.ceshiservice.cn/",
+  "//localhost:5173/": "//llm-center-admin.ceshiservice.cn/",
 };
 
 export default function hostMap(host) {
